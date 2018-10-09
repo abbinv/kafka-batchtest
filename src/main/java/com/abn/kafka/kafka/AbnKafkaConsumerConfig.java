@@ -28,8 +28,10 @@ public class AbnKafkaConsumerConfig {
         props.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);
         props.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);
         props.put(ConsumerConfig.GROUP_ID_CONFIG, "batch");
-        props.put(ConsumerConfig.MAX_POLL_RECORDS_CONFIG, "100");
-        props.put(ConsumerConfig.MAX_POLL_INTERVAL_MS_CONFIG, "30000");
+        //props.put(ConsumerConfig.MAX_POLL_RECORDS_CONFIG, "100");
+        //props.put(ConsumerConfig.MAX_POLL_INTERVAL_MS_CONFIG, "30000");
+        props.put(ConsumerConfig.FETCH_MIN_BYTES_CONFIG, "30000");
+        props.put(ConsumerConfig.FETCH_MAX_WAIT_MS_CONFIG, "30000");
 
         return props;
     }
